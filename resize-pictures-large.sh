@@ -10,11 +10,11 @@ mkdir --parents large;
 for f in *.jpg; do
   renamed=`echo "$f" | sed 's/^\(.*\)\.jpg$/large\/\1-lg.jpg/'`;
   if [ $(wc -c < "$f") -ge 2048000 ]; then
-    echo "50% | $f";
-    convert $f -resize 30% $renamed;
+    echo "65% | $f";
+    convert $f -resize 65% $renamed;
   elif [ $(wc -c < "$f") -ge 1024000 ]; then
-    echo "75% | $f";
-    convert $f -resize 50% -strip $renamed;
+    echo "80% | $f";
+    convert $f -resize 80% -strip $renamed;
   else
     echo "... | $f";
     cp $f $renamed;
